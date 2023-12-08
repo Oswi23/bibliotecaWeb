@@ -1,3 +1,5 @@
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +23,7 @@
                             <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroUsuario&accion=Listar" target="myFrame">Usuarios</a>                         
                         </li>
                         <li class="nav-item">
-                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="RegistroLibro.jsp" target="myFrame">Libros</a>
+                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroLibro&accion=Listar" target="myFrame">Libros</a>
                         </li>
                         <li class="nav-item">
                             <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroPrestamo" target="myFrame">RegistroPrestamo</a>
@@ -51,7 +53,7 @@
                 </div>
             </div>
         </nav>      
-        <div class="m-4" style="height: 650px;" >
+        <div class="m-4" style="height: 750px;" >
             <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
         </div>
 

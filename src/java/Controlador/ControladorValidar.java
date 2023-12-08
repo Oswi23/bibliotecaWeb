@@ -22,10 +22,10 @@ public class ControladorValidar extends HttpServlet {
 
             us = udao.validar(carnet, pass);
             if (us.getCarnet() != null) {
-                request.setAttribute("nombre_user", us);
+               request.setAttribute("nombre_user", us);
                request.setAttribute("carnet", us);
                request.setAttribute("correo", us);
-                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+               request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
             } else {
 
                 request.getRequestDispatcher("index.jsp").forward(request, response);
