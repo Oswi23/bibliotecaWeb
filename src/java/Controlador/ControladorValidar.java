@@ -54,6 +54,7 @@ public class ControladorValidar extends HttpServlet {
 
             us = udao.validar(carnet, pass);
             if (us.getCarnet() != null) {
+                String nombreUsuario = udao.obtenerNombreUsuario(carnet);
                 request.setAttribute("nombre_user", us);
                request.setAttribute("carnet", us);
                request.setAttribute("correo", us);

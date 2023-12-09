@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LibroDAO {
+public class CDsDAO {
     //Instanciando la conexión a la base de datos
     Conexion cn = new Conexion();
     Connection con;
@@ -47,7 +47,7 @@ public class LibroDAO {
     //OPERACIONES CRUD
     
  public List listar(){
-        String sql="SELECT id_biblioteca, codigo_material, nombre_ejemplar, ISBN, numero_paginas, fecha_publicacion, cantidad, estado_material_id_estado_material, genero_id_genero, editorial_id_editorial, autor_id_autor, tipo_material_id_tipo_material  FROM biblioteca WHERE tipo_material_id_tipo_material = 1";
+        String sql="SELECT id_biblioteca, codigo_material, nombre_ejemplar, ISBN, numero_paginas, fecha_publicacion, cantidad, estado_material_id_estado_material, genero_id_genero, editorial_id_editorial, autor_id_autor, tipo_material_id_tipo_material  FROM biblioteca WHERE tipo_material_id_tipo_material = 2";
         List<Libro>lista=new ArrayList<>();
         try {
             con=cn.Conexion();

@@ -118,9 +118,7 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List lista = libdao.listar();
                     request.setAttribute("libros", lista);
-
                     break;
-
                 case "Agregar":
                     String cod_libro = request.getParameter("txtCodigo");
                     String nom_libro = request.getParameter("txtNombreLibro");
@@ -203,7 +201,16 @@ public class Controlador extends HttpServlet {
                     id_Libro = Integer.parseInt(request.getParameter("id"));//Revisar de donde viene es id
                     libdao.delete(id_Libro);
                     request.getRequestDispatcher("Controlador?menu=RegistroLibro&accion=Listar").forward(request, response);
-
+                    break;
+                    /*
+                       Libro lib = new Libro();                               //Entidad
+                        LibroDAO libdao = new LibroDAO();      //Clase
+                    */
+               case "BuscarCliente": 
+                   String dni = request.getParameter("codigocliente");
+                   lib.setCodigo_material(dni);
+                   lib=libdao.buscar(dni);
+                    request.setAttribute("lib", lib);
                     break;
                 default:
                     throw new AssertionError();
@@ -215,6 +222,15 @@ public class Controlador extends HttpServlet {
         if (menu.equals("RegistroPrestamo")) {
             request.getRequestDispatcher("RegistroPrestamo.jsp").forward(request, response);
         }
+        
+         if (menu.equals("RegistroRevista")) {
+            request.getRequestDispatcher("RegistroRevista.jsp").forward(request, response);
+        }
+         
+         if (menu.equals("RegistroCDs")) {
+            request.getRequestDispatcher("RegistroCDs.jsp").forward(request, response);
+        }
+        
         // }
 
     }

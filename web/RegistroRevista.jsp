@@ -20,7 +20,7 @@
         <div class="d-flex">
             <div class="card col-sm-3 formulario">
                 <div class="card-body">
-                    <form action="Controlador?menu=RegistroLibro" method="POST">
+                    <form action="Controlador?menu=RegistroRevista" method="POST">
                         <div class="form-group">
                             <label>Codigo del Libro</label>
                             <input type="text" value ="${libro.getCodigo_material()}" name="txtCodigo" class="form-control">

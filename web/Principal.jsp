@@ -25,6 +25,12 @@
                         <li class="nav-item">
                             <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroLibro&accion=Listar" target="myFrame">Libros</a>
                         </li>
+                         <li class="nav-item">
+                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroRevista&accion=Listar" target="myFrame">Revistas</a>
+                        </li>
+                         <li class="nav-item">
+                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroCDs&accion=Listar" target="myFrame">CD's</a>
+                        </li>
                         <li class="nav-item">
                             <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroPrestamo" target="myFrame">RegistroPrestamo</a>
                         </li>
