@@ -22,89 +22,86 @@
                 <div class="card-body">
                     <form action="Controlador?menu=RegistroRevista" method="POST">
                         <div class="form-group">
-                            <label>Codigo del Libro</label>
-                            <input type="text" value ="${libro.getCodigo_material()}" name="txtCodigo" class="form-control">
+                            <label>Codigo de la Revista</label>
+                            <input type="text" value ="${revista.getCodigo_material()}" name="txtCodigo" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Nombre del Libro</label>
-                            <input type="text" value="${libro.getNombre_ejemplar()}" name="txtNombreLibro" class="form-control">
+                            <label>Nombre de la Revista</label>
+                            <input type="text" value="${revista.getNombre_ejemplar()}" name="txtNombreLibro" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label>ISBN</label>
-                            <input type="text" value="${libro.getISBN()}" name="txtIsbn" class="form-control">
-                        </div>
+                        
                         <div class="form-group">
                             <label>Numero de Paginas</label>
-                            <input type="number" value="${libro.getNumero_paginas()}"  name="txtNumero" class="form-control">
+                            <input type="number" value="${revista.getNumero_paginas()}"  name="txtNumero" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Existencias</label>
-                            <input type="number" value="${libro.getCantidad()}" name="txtExistencia" class="form-control">
+                            <input type="number" value="${revista.getCantidad()}" name="txtExistencia" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Estado del Libro</label>
+                            <label>Estado de la Revista</label>
 
                             <select name="cmbEstado" class="form-control">
-                                <option value="0" ${libro.getEstado_material_id_estado_material() == 0 ? 'selected' : ''}>Selecciona Estado</option>
-                                <option value="1" ${libro.getEstado_material_id_estado_material() == 1 ? 'selected' : ''}>En Reparación</option>
-                                <option value="2" ${libro.getEstado_material_id_estado_material() == 2 ? 'selected' : ''}>Fuera del Sistema</option>
-                                <option value="3" ${libro.getEstado_material_id_estado_material() == 3 ? 'selected' : ''}>Prestado</option>
-                                <option value="4" ${libro.getEstado_material_id_estado_material() == 4 ? 'selected' : ''}>Disponible</option>
-                                <option value="5" ${libro.getEstado_material_id_estado_material() == 5 ? 'selected' : ''}>Perdido</option>
+                                <option value="0" ${revista.getEstado_material_id_estado_material() == 0 ? 'selected' : ''}>Selecciona Estado</option>
+                                <option value="1" ${revista.getEstado_material_id_estado_material() == 1 ? 'selected' : ''}>En Reparación</option>
+                                <option value="2" ${revista.getEstado_material_id_estado_material() == 2 ? 'selected' : ''}>Fuera del Sistema</option>
+                                <option value="3" ${revista.getEstado_material_id_estado_material() == 3 ? 'selected' : ''}>Prestado</option>
+                                <option value="4" ${revista.getEstado_material_id_estado_material() == 4 ? 'selected' : ''}>Disponible</option>
+                                <option value="5" ${revista.getEstado_material_id_estado_material() == 5 ? 'selected' : ''}>Perdido</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Editorial</label>
                             <select name="cmbEditorial" class="form-control">
-                                <option value="0" ${libro.getEditorial_id_editorial() == 0 ? 'selected' : ''}>Selecciona un Libro</option>
-                                <option value="1" ${libro.getEditorial_id_editorial() == 1 ? 'selected' : ''}>Libros Rápidos</option>
-                                <option value="2" ${libro.getEditorial_id_editorial() == 2 ? 'selected' : ''}>Ediciones Estelares</option>
-                                <option value="3" ${libro.getEditorial_id_editorial() == 3 ? 'selected' : ''}>Publicaciones Virtuosas</option>
-                                <option value="4" ${libro.getEditorial_id_editorial() == 4 ? 'selected' : ''}>Páginas Doradas</option> 
-                                <option value="5" ${libro.getEditorial_id_editorial() == 5 ? 'selected' : ''}>Impresiones Mágicas</option>
-                                <option value="6" ${libro.getEditorial_id_editorial() == 6 ? 'selected' : ''}>Libros del Mañana</option>
-                                <option value="7" ${libro.getEditorial_id_editorial() == 7 ? 'selected' : ''}>Historias Inéditas</option>
-                                <option value="8" ${libro.getEditorial_id_editorial() == 8 ? 'selected' : ''}>Aventuras Literarias</option>
-                                <option value="9" ${libro.getEditorial_id_editorial() == 9 ? 'selected' : ''}>Mundos Imaginarios</option>
-                                <option value="10" ${libro.getEditorial_id_editorial() == 10 ? 'selected' : ''}>Armonía Editorial</option>
+                                <option value="0" ${revista.getEditorial_id_editorial() == 0 ? 'selected' : ''}>Selecciona un Libro</option>
+                                <option value="1" ${revista.getEditorial_id_editorial() == 1 ? 'selected' : ''}>Libros Rápidos</option>
+                                <option value="2" ${revista.getEditorial_id_editorial() == 2 ? 'selected' : ''}>Ediciones Estelares</option>
+                                <option value="3" ${revista.getEditorial_id_editorial() == 3 ? 'selected' : ''}>Publicaciones Virtuosas</option>
+                                <option value="4" ${revista.getEditorial_id_editorial() == 4 ? 'selected' : ''}>Páginas Doradas</option> 
+                                <option value="5" ${revista.getEditorial_id_editorial() == 5 ? 'selected' : ''}>Impresiones Mágicas</option>
+                                <option value="6" ${revista.getEditorial_id_editorial() == 6 ? 'selected' : ''}>Libros del Mañana</option>
+                                <option value="7" ${revista.getEditorial_id_editorial() == 7 ? 'selected' : ''}>Historias Inéditas</option>
+                                <option value="8" ${revista.getEditorial_id_editorial() == 8 ? 'selected' : ''}>Aventuras Literarias</option>
+                                <option value="9" ${revista.getEditorial_id_editorial() == 9 ? 'selected' : ''}>Mundos Imaginarios</option>
+                                <option value="10" ${revista.getEditorial_id_editorial() == 10 ? 'selected' : ''}>Armonía Editorial</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Autor</label>
                             <select name="cmbAutor" class="form-control">
-                                <option value="0" ${libro.getAutor_id_autor() == 0 ? 'selected' : ''}>Selecciona un Autor</option>
-                                <option value="1" ${libro.getAutor_id_autor() == 1 ? 'selected' : ''}>J.K. Rowling</option>
-                                <option value="2" ${libro.getAutor_id_autor() == 2 ? 'selected' : ''}>Stephen King</option>
-                                <option value="3" ${libro.getAutor_id_autor() == 3 ? 'selected' : ''}>Agatha Christie</option>
-                                <option value="4" ${libro.getAutor_id_autor() == 4 ? 'selected' : ''}>Gabriel García Márquez</option>
-                                <option value="5" ${libro.getAutor_id_autor() == 5 ? 'selected' : ''}>J.R.R. Tolkien</option>
-                                <option value="6" ${libro.getAutor_id_autor() == 6 ? 'selected' : ''}>Jane Austen</option>
-                                <option value="7" ${libro.getAutor_id_autor() == 7 ? 'selected' : ''}>Haruki Murakami</option>
-                                <option value="8" ${libro.getAutor_id_autor() == 8 ? 'selected' : ''}>Maya Angelou</option>
-                                <option value="9" ${libro.getAutor_id_autor() == 9 ? 'selected' : ''}>Bob Dylans</option>
-                                <option value="10" ${libro.getAutor_id_autor() == 10 ? 'selected' : ''}>Jorge Luis Borges</option>
+                                <option value="0" ${revista.getAutor_id_autor() == 0 ? 'selected' : ''}>Selecciona un Autor</option>
+                                <option value="1" ${revista.getAutor_id_autor() == 1 ? 'selected' : ''}>J.K. Rowling</option>
+                                <option value="2" ${revista.getAutor_id_autor() == 2 ? 'selected' : ''}>Stephen King</option>
+                                <option value="3" ${revista.getAutor_id_autor() == 3 ? 'selected' : ''}>Agatha Christie</option>
+                                <option value="4" ${revista.getAutor_id_autor() == 4 ? 'selected' : ''}>Gabriel García Márquez</option>
+                                <option value="5" ${revista.getAutor_id_autor() == 5 ? 'selected' : ''}>J.R.R. Tolkien</option>
+                                <option value="6" ${revista.getAutor_id_autor() == 6 ? 'selected' : ''}>Jane Austen</option>
+                                <option value="7" ${revista.getAutor_id_autor() == 7 ? 'selected' : ''}>Haruki Murakami</option>
+                                <option value="8" ${revista.getAutor_id_autor() == 8 ? 'selected' : ''}>Maya Angelou</option>
+                                <option value="9" ${revista.getAutor_id_autor() == 9 ? 'selected' : ''}>Bob Dylans</option>
+                                <option value="10" ${revista.getAutor_id_autor() == 10 ? 'selected' : ''}>Jorge Luis Borges</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Genero</label>
                             <select name="cmbGenero" class="form-control">
-                                <option value="0" ${libro.getGenero_id_genero() == 0 ? 'selected' : ''}>Selecciona un Genero</option>
-                                <option value="1" ${libro.getGenero_id_genero() == 1 ? 'selected' : ''}>Novela</option>
-                                <option value="2" ${libro.getGenero_id_genero() == 2 ? 'selected' : ''}>Moda</option>
-                                <option value="3" ${libro.getGenero_id_genero() == 3 ? 'selected' : ''}>Diseño</option>
-                                <option value="4" ${libro.getGenero_id_genero() == 4 ? 'selected' : ''}>Drama</option>
-                                <option value="5" ${libro.getGenero_id_genero() == 5 ? 'selected' : ''}>Suspenso</option>
-                                <option value="6" ${libro.getGenero_id_genero() == 6 ? 'selected' : ''}>Arte</option>
-                                <option value="7" ${libro.getGenero_id_genero() == 7 ? 'selected' : ''}>Acción</option>
-                                <option value="8" ${libro.getGenero_id_genero() == 8 ? 'selected' : ''}>Rock</option>
-                                <option value="9" ${libro.getGenero_id_genero() == 9 ? 'selected' : ''}>Clásico</option>
-                                <option value="10" ${libro.getGenero_id_genero() == 10 ? 'selected' : ''}>Balada</option>
-                                <option value="11" ${libro.getGenero_id_genero() == 11 ? 'selected' : ''}>Salsa</option>
+                                <option value="0" ${revista.getGenero_id_genero() == 0 ? 'selected' : ''}>Selecciona un Genero</option>
+                                <option value="1" ${revista.getGenero_id_genero() == 1 ? 'selected' : ''}>Novela</option>
+                                <option value="2" ${revista.getGenero_id_genero() == 2 ? 'selected' : ''}>Moda</option>
+                                <option value="3" ${revista.getGenero_id_genero() == 3 ? 'selected' : ''}>Diseño</option>
+                                <option value="4" ${revista.getGenero_id_genero() == 4 ? 'selected' : ''}>Drama</option>
+                                <option value="5" ${revista.getGenero_id_genero() == 5 ? 'selected' : ''}>Suspenso</option>
+                                <option value="6" ${revista.getGenero_id_genero() == 6 ? 'selected' : ''}>Arte</option>
+                                <option value="7" ${revista.getGenero_id_genero() == 7 ? 'selected' : ''}>Acción</option>
+                                <option value="8" ${revista.getGenero_id_genero() == 8 ? 'selected' : ''}>Rock</option>
+                                <option value="9" ${revista.getGenero_id_genero() == 9 ? 'selected' : ''}>Clásico</option>
+                                <option value="10" ${revista.getGenero_id_genero() == 10 ? 'selected' : ''}>Balada</option>
+                                <option value="11" ${revista.getGenero_id_genero() == 11 ? 'selected' : ''}>Salsa</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Fecha de Publicacion</label>
-                            <input type="date" value="${libro.getFecha_publicacion().toString().substring(0, 10)}" name="txtFechaPublicacion"  class="form-control">
+                            <input type="date" value="${revista.getFecha_publicacion().toString().substring(0, 10)}" name="txtFechaPublicacion"  class="form-control">
                         </div>
                         <input type ="submit" name = "accion" value="Agregar" class="btn bg-info">
                         <input type ="submit" name = "accion" value="Actualizar" class="btn btn-success">
@@ -115,8 +112,8 @@
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="d-flex col-sm-4">
-                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="Codigo">
-                        <input type="submit" name="accion" value="BuscarCliente" class="btn bg-info">
+                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="Codigo_Revista">
+                        <input type="submit" name="accion" value="BuscarRevista" class="btn bg-info">
                     </div>
                 </div>
 
@@ -125,33 +122,30 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
-                                <th>CODIGO LIBRO </th>
-                                <th>NOMBRE LIBRO</th>
-                                <th>ISBN</th>
+                                <th>CODIGO REVISTA </th>
+                                <th>NOMBRE REVISTA</th>
+                        
                                 <th>NUMERO DE PAGINAS</th> 
                                 <th>EXISTENCIAS</th>
-                                <th>ESTADO DE LIBRO</th>
+                                <!--<th>ESTADO DE LA REVISTA</th>
                                 <th>EDITORIAL</th>
                                 <th>AUTOR</th>
-                                <th>GENERO</th>
+                                <th>GENERO</th>-->
                                 <th>FECHA PUBLICACION</th>
                                 <th>ACCIONES</th>                           
                             </tr>
                             </thead>
                             <tbody>
-                                <c:forEach var="lib" items="${libros}">
+                                <c:forEach var="rev" items="${revistas}">
                                     <tr>
-                                        <td>${lib.getId_biblioteca()}</td>
-                                        <td>${lib.getCodigo_material()}</td>
-                                        <td>${lib.getNombre_ejemplar()}</td>
-                                        <td>${lib.getISBN()}</td>
-                                        <td>${lib.getNumero_paginas()}</td>
-                                        <td>${lib.getCantidad()}</td>
-                                        <td>${lib.getEstado_material_id_estado_material()}</td>
-                                        <td>${lib.getEditorial_id_editorial()}</td>
-                                        <td>${lib.getAutor_id_autor()}</td>
-                                        <td>${lib.getGenero_id_genero()}</td>
-                                        <td>${lib.getFecha_publicacion().toString().substring(0, 10)}</td>
+                                        <td>${rev.getId_biblioteca()}</td>
+                                        <td>${rev.getCodigo_material()}</td>
+                                        <td>${rev.getNombre_ejemplar()}</td>
+                         
+                                        <td>${rev.getNumero_paginas()}</td>
+                                        <td>${rev.getCantidad()}</td>
+                                     
+                                        <td>${rev.getFecha_publicacion().toString().substring(0, 10)}</td>
                                         <td>
                                             <a class="btn btn-warning" href="Controlador?menu=RegistroLibro&accion=Editar&id=${lib.getId_biblioteca()}">Editar</a>
                                             <a class="btn btn-danger" href="Controlador?menu=RegistroLibro&accion=Eliminar&id=${lib.getId_biblioteca()}">Eliminar</a>  

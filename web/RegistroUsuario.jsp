@@ -59,9 +59,17 @@
                     </form>
                 </div>
             </div>
+                        
+                         <div class="container">
+                <div class="row justify-content-end">
+                    <div class="d-flex col-sm-4">
+                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="CarnetUsuario">
+                        <input type="submit" name="accion" value="BuscarUsuario" class="btn bg-info">
+                    </div>
+                </div>
 
 
-            <div class="col-sm-9">
+            <div class="col-sm-12">
                 <table class="table table-hover" >
                     <thead>
                         <tr>
@@ -70,7 +78,7 @@
                             <th scope="col">NOMBRES</th>
                             <th scope="col">APELLIDOS</th>
                             <th scope="col">CORREO </th>
-                            <th scope="col">CONTRASEÑA</th>
+                            <!-- <th scope="col">CONTRASEÑA</th>-->
                             <th scope="col">GENERO</th>
                             <th scope="col">ESTADO</th>
                             <th scope="col">PERFIL</th>
@@ -85,7 +93,7 @@
                                 <td>${us.getNombre_user()}</td>
                                 <td>${us.getApellido_user()}</td>
                                 <td>${us.getCorreo()}</td>
-                                <td>${us.getPass()}</td>
+                              
                                 <td>${us.getGenero()}</td>
                                 <td>${us.getEstado_user()}</td>
                                 <td>${us.getId_perfil()}</td>

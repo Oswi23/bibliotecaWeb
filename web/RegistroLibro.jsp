@@ -115,8 +115,8 @@
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="d-flex col-sm-4">
-                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="Codigo">
-                        <input type="submit" name="accion" value="BuscarCliente" class="btn bg-info">
+                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="Codigo_Libro">
+                        <input type="submit" name="accion" value="BuscarLibro" class="btn bg-info">
                     </div>
                 </div>
 
@@ -130,10 +130,10 @@
                                 <th>ISBN</th>
                                 <th>NUMERO DE PAGINAS</th> 
                                 <th>EXISTENCIAS</th>
-                                <th>ESTADO DE LIBRO</th>
-                                <th>EDITORIAL</th>
+                              <!--  <th>ESTADO DE LIBRO</th>-->
+                                <!--<th>EDITORIAL</th>
                                 <th>AUTOR</th>
-                                <th>GENERO</th>
+                                <th>GENERO</th>-->
                                 <th>FECHA PUBLICACION</th>
                                 <th>ACCIONES</th>                           
                             </tr>
@@ -147,10 +147,8 @@
                                         <td>${lib.getISBN()}</td>
                                         <td>${lib.getNumero_paginas()}</td>
                                         <td>${lib.getCantidad()}</td>
-                                        <td>${lib.getEstado_material_id_estado_material()}</td>
-                                        <td>${lib.getEditorial_id_editorial()}</td>
-                                        <td>${lib.getAutor_id_autor()}</td>
-                                        <td>${lib.getGenero_id_genero()}</td>
+                               
+                           
                                         <td>${lib.getFecha_publicacion().toString().substring(0, 10)}</td>
                                         <td>
                                             <a class="btn btn-warning" href="Controlador?menu=RegistroLibro&accion=Editar&id=${lib.getId_biblioteca()}">Editar</a>

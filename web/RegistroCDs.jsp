@@ -115,8 +115,8 @@
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="d-flex col-sm-4">
-                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="Codigo">
-                        <input type="submit" name="accion" value="BuscarCliente" class="btn bg-info">
+                        <input type="text" name="codigocliente" value="${b.getCodigo_material()}" class="form-control" placeholder="CodigoCD´s">
+                        <input type="submit" name="accion" value="BuscarCD´s" class="btn bg-info">
                     </div>
                 </div>
 

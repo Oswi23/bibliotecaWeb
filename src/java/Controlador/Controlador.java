@@ -2,6 +2,8 @@ package Controlador;
 
 import Modelo.Libro;
 import Modelo.LibroDAO;
+import Modelo.Revista;
+import Modelo.RevistaDAO;
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
 import java.io.IOException;
@@ -18,6 +20,9 @@ public class Controlador extends HttpServlet {
     UsuarioDAO udao = new UsuarioDAO(); //Clase
     Libro lib = new Libro();//Entidad
     LibroDAO libdao = new LibroDAO();//Clase
+    Revista rev = new Revista();//Entidad
+    RevistaDAO revdao = new RevistaDAO();//Clase
+     int id_Revista;
     int id_Libro;
     
     int ide;//La usaremos para editar
@@ -224,7 +229,110 @@ public class Controlador extends HttpServlet {
         }
         
          if (menu.equals("RegistroRevista")) {
-            request.getRequestDispatcher("RegistroRevista.jsp").forward(request, response);
+              switch (accion) { //La variable que tendrá el switch será acción
+                case "Listar":
+                    List lista = revdao.listar();
+                    request.setAttribute("revistas", lista);
+                    break;
+                case "Agregar":
+                    String cod_libro = request.getParameter("txtCodigo");
+                    String nom_libro = request.getParameter("txtNombreLibro");
+                    String isbn_libro = request.getParameter("txtIsbn");
+                    String paginas = request.getParameter("txtNumero");
+                     int paginas_libro = Integer.parseInt(paginas);
+                    String exis = request.getParameter("txtExistencia");
+                    int exis_libro = Integer.parseInt(exis);
+                    // Obtener el valor seleccionado del ComboBox
+                    String estado = request.getParameter("cmbEstado");
+                    int estado_libro = Integer.parseInt(estado);
+                    String editor = request.getParameter("cmbEditorial");
+                    int editor_libro = Integer.parseInt(editor);
+                    String autor = request.getParameter("cmbAutor");
+                    int autor_libro = Integer.parseInt(autor);
+                    String genero = request.getParameter("cmbGenero");
+                    int genero_libro = Integer.parseInt(genero);
+                    String publica_libro = request.getParameter("txtFechaPublicacion");
+                    
+                    rev.setCodigo_material(cod_libro);
+                    rev.setNombre_ejemplar(nom_libro);
+                    rev.setISBN(isbn_libro);
+                    rev.setNumero_paginas(paginas_libro);
+                    rev.setCantidad(exis_libro);
+                    rev.setEstado_material_id_estado_material(estado_libro);
+                    rev.setEditorial_id_editorial(editor_libro);
+                    rev.setAutor_id_autor(autor_libro);
+                    rev.setGenero_id_genero(genero_libro);
+                    rev.setFecha_publicacion(publica_libro);
+                        
+                    revdao.agregar(rev);
+                     request.getRequestDispatcher("Controlador?menu=RegistroRevista&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    id_Revista = Integer.parseInt(request.getParameter("id"));
+                    Revista r = revdao.listarId(id_Revista);
+                    request.setAttribute("revista", r);
+                    request.getRequestDispatcher("Controlador?menu=RegistroRevista&accion=Listar").forward(request, response);
+
+                    break;
+                    case "Actualizar":
+                    String cod_libro1 = request.getParameter("txtCodigo");
+                    String nom_libro1 = request.getParameter("txtNombreLibro");
+                    String isbn_libro1 = request.getParameter("txtIsbn");
+                    String paginas1 = request.getParameter("txtNumero");
+                     int paginas_libro1 = Integer.parseInt(paginas1);
+                    String exis1 = request.getParameter("txtExistencia");
+                    int exis_libro1 = Integer.parseInt(exis1);
+                    // Obtener el valor seleccionado del ComboBox
+                    String estado1 = request.getParameter("cmbEstado");
+                    int estado_libro1 = Integer.parseInt(estado1);
+                    String editor1 = request.getParameter("cmbEditorial");
+                    int editor_libro1 = Integer.parseInt(editor1);
+                    String autor1 = request.getParameter("cmbAutor");
+                    int autor_libro1 = Integer.parseInt(autor1);
+                    String genero1 = request.getParameter("cmbGenero");
+                    int genero_libro1 = Integer.parseInt(genero1);
+                    String publica_libro1 = request.getParameter("txtFechaPublicacion");
+                    
+                    rev.setCodigo_material(cod_libro1);
+                    rev.setNombre_ejemplar(nom_libro1);
+                    rev.setISBN(isbn_libro1);
+                    rev.setNumero_paginas(paginas_libro1);
+                    rev.setCantidad(exis_libro1);
+                    rev.setEstado_material_id_estado_material(estado_libro1);
+                    rev.setEditorial_id_editorial(editor_libro1);
+                    rev.setAutor_id_autor(autor_libro1);
+                    rev.setGenero_id_genero(genero_libro1);
+                    rev.setFecha_publicacion(publica_libro1);
+                    rev.setId_biblioteca(id_Revista);
+
+ 
+                    revdao.actualizar(rev);
+                    request.getRequestDispatcher("Controlador?menu=RegistroRevista&accion=Listar").forward(request, response);
+                    
+
+                    break;
+
+               case "Eliminar":
+                    id_Revista = Integer.parseInt(request.getParameter("id"));//Revisar de donde viene es id
+                    libdao.delete(id_Revista);
+                    request.getRequestDispatcher("Controlador?menu=RegistroRevista&accion=Listar").forward(request, response);
+                    break;
+                    /*
+                       Libro lib = new Libro();                               //Entidad
+                        LibroDAO libdao = new LibroDAO();      //Clase
+                    */
+               case "BuscarCliente": 
+                   String dni = request.getParameter("codigocliente");
+                   rev.setCodigo_material(dni);
+                   rev=revdao.buscar(dni);
+                    request.setAttribute("rev", rev);
+                    break;
+                default:
+                    throw new AssertionError();
+
+            }
+
+             request.getRequestDispatcher("RegistroRevista.jsp").forward(request, response);
         }
          
          if (menu.equals("RegistroCDs")) {

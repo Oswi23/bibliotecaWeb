@@ -17,7 +17,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" aria-current="page" href="#">Inicio</a>
+                            <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" aria-current="page" href=href=# >Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a style ="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistroUsuario&accion=Listar" target="myFrame">Usuarios</a>                         
